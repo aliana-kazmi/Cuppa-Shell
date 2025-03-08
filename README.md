@@ -1,35 +1,80 @@
-[![progress-banner](https://backend.codecrafters.io/progress/shell/763d1788-e58b-4b14-bfb2-62b3a660790f)](https://app.codecrafters.io/users/codecrafters-bot?r=2qF)
+# Cuppa Shell 
 
-This is a starting point for Java solutions to the
-["Build Your Own Shell" Challenge](https://app.codecrafters.io/courses/shell/overview).
+Cuppa Shell is a custom shell created in Java which was created according to the Codecrafters challenge. It provides a REPL (Read-Eval-Print Loop) environment, supports built-in commands, executes external programs, and includes essential shell features such as navigation commands and quoting support.
 
-In this challenge, you'll build your own POSIX compliant shell that's capable of
-interpreting shell commands, running external programs and builtin commands like
-cd, pwd, echo and more. Along the way, you'll learn about shell command parsing,
-REPLs, builtin commands, and more.
+## Features
 
-**Note**: If you're viewing this repo on GitHub, head over to
-[codecrafters.io](https://codecrafters.io) to try the challenge.
+- **Interactive Shell Environment**
 
-# Passing the first stage
+  - Implements a Read-Eval-Print Loop (REPL) with a custom prompt.
 
-The entry point for your `shell` implementation is in `src/main/java/Main.java`.
-Study and uncomment the relevant code, and push your changes to pass the first
-stage:
+- **Command Handling**
+
+  - Supports built-in commands such as:
+    - `exit 0`  - Exits the shell.
+    - `echo` - Prints arguments to the console.
+    - `type` - Identifies built-in commands and executable files.
+
+- **Program Execution**
+
+  - Executes external programs from the shell environment.
+
+- **Navigation Commands**
+
+  - `pwd` - Displays the current working directory.
+  - `cd` - Changes the current directory (supports absolute, relative, and home directory navigation).
+
+- **Quoting Support**
+
+  - Supports single-quoted strings to handle spaces and special characters in commands.
+
+## Installation
+
+1. Clone this repository:
+   ```sh
+   git clone https://github.com/aliana-kazmi/Cuppa-Shell.git
+   ```
+2. Navigate to the project directory:
+   ```sh
+   cd cuppa-shell
+   ```
+3. Compile and run:
+   ```sh
+   ./your_program.sh
+   ```
+
+## Usage
+
+Once the shell is running, you can enter commands just like in a standard shell. Here are a few examples:
 
 ```sh
-git commit -am "pass 1st stage" # any msg
-git push origin master
+cuppa> echo Hello, World!
+Hello, World!
+
+cuppa> echo 'Welcome to Cuppaaaa     Shell'
+Welcome to Cuppaaaa     Shell
+
+cuppa> pwd
+/home/user
+
+cuppa> cd /usr/local
+cuppa> pwd
+/usr/local
+
+cuppa> ../
+cuppa>pwd
+/usr
+
+cuppa> type echo
+echo is a built-in command
+
+cuppa> type cd hello
+cd is a built-in command
+hello: not found
+
+cuppa> exit 0
 ```
 
-Time to move on to the next stage!
+## Contributing
 
-# Stage 2 & beyond
-
-Note: This section is for stages 2 and beyond.
-
-1. Ensure you have `mvn` installed locally
-1. Run `./your_program.sh` to run your program, which is implemented in
-   `src/main/java/Main.java`.
-1. Commit your changes and run `git push origin master` to submit your solution
-   to CodeCrafters. Test output will be streamed to your terminal.
+Contributions are welcome! Feel free to fork the repository, submit issues, or open a pull request with improvements.
