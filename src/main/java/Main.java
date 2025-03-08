@@ -41,7 +41,7 @@ public class Main {
         String input;
 
         do {
-            System.out.print("$ ");
+            System.out.print("cuppa> ");
             input = scanner.nextLine();
 
             //initialization
